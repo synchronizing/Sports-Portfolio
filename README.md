@@ -1,7 +1,3 @@
-Yo
-Sorry Noah, I had to move you down. -Tim
-
-Hi I'm Noah
 ## Sports-Portfolio
 ### Pre-requisites
 * git - [Installation guide](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/) .  
