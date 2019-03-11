@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-/* example
+/* example 1
 playerName: Allen Iverson
 cardSet:    Collector's Edge Rookie Rage - Die Cuts
 cardNumber: 19
@@ -12,6 +12,15 @@ imageFront:   http://
 imageBack:    http://
 quantity:   1
 createdAt:  *whenever this entry was created*
+*/
+
+/* current 
+    playerName:         Allen Iverson
+    team:               Philadelphia 76ers
+    cardDescription:    Collector's Edge Rookie Rage - Die Cuts
+    sport:              Basketball
+    imageFront:         http://
+    imageBack:          http://
 */
 
 const CardSchema = new mongoose.Schema({
@@ -28,7 +37,8 @@ const CardSchema = new mongoose.Schema({
   },
   sport: {
       type: String,
-      enum: ['BASKETBALL', 'BASEBALL', 'HOCKEY', 'BOXING', 'FOOTBALL', 'GOLF', 'HOCKEY', 'MMA', 'SOCCER', 'TENNIS', 'GAMING', 'MISC', 'RACING', 'WRESTLING', 'NON-SPORT'],
+      enum: ['BASKETBALL', 'BASEBALL', 'HOCKEY', 'BOXING', 'FOOTBALL', 'GOLF', 
+      'HOCKEY', 'MMA', 'SOCCER', 'TENNIS', 'GAMING', 'MISC', 'RACING', 'WRESTLING', 'NON-SPORT'],
       required: true
   },
   imageFront: {
