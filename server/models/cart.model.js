@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 //shopping cart is represented by an object with some public properties
+//the shopping cart only needs to track the array of Card objects that a user has added to their cart
 class Cart {
     constructor() {
        this.data = {};
        this.data.items = [];
-       this.data.totals = 0;
-       this.data.formattedTotals = '';
     }
  }
  
