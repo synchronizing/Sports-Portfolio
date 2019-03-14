@@ -28,6 +28,10 @@ const CardSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  bought:   {
+      type: boolean,
+      required: true
+  },
   team: {
     type: String,
   },
