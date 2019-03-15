@@ -1,6 +1,5 @@
 ## Sports-Portfolio
 
-##yo
 ### Pre-requisites
 * git - [Installation guide](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/) .  
 * node.js - [Download page](https://nodejs.org/en/download/) .  
@@ -9,8 +8,8 @@
 
 ### Installation
 ``` 
-git clone https://github.com/linnovate/mean
-cd mean
+git clone https://github.com/synchronizing/Sports-Portfolio/
+cd Sports-Portfolio/
 cp .env.example .env
 npm install
 sudo service mongod start
@@ -18,8 +17,8 @@ npm start (for development)
 ```
 ### Docker based 
 ``` 
-git clone https://github.com/linnovate/mean
-cd mean
+git clone https://github.com/synchronizing/Sports-Portfolio/
+cd Sports-Portfolio/
 cp .env.example .env
 docker-compose up -d
 ```
