@@ -1,3 +1,7 @@
+/* 
+This is just a testing file I created for testing if the schemas implemented are working properly.
+    
+*/
 var Card = require('../models/card.model');
 
 var cards = [
