@@ -43,4 +43,39 @@ exports.list = function(req, res) {
     });
   };
 
+/* retrieve a card and update its properties! */
+/* This should only be available for admins to access */
+exports.update = function(req, res) {
+    var card = req.card;
   
+    card.playerName = req.body.playerName;
+    card.bought = req.body.bought;
+    card.team = req.body.team;
+    card.description = req.body.description;
+    card.sport = req.body.sport;
+    card.imageFront = req.body.imageFront;
+    card.imageBack = req.body.imageBack;
+  
+    card.save(function(err) {
+      if (err) {
+        console.log(err);
+        res.status(400).send(err);
+      } else {
+        res.json(card);
+      }
+    });
+  };
+
+  /* retrieve a card by its particular id */
+  exports.cardById = function(req, res, next, id) {
+
+    Card.findById(id).exec(function(err, card) {
+      if(err) {
+        console.log(err);
+        res.status(400).send(err);
+      } else {
+        req.card = card;
+        next();
+      }
+    });
+  };
