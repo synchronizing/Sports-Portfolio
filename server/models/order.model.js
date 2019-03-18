@@ -1,7 +1,48 @@
 const mongoose = require('mongoose');
 
+/*
+    _id:        xxxxx
+    customerId:     
+    cardIds:    []
+    price:      $xxx
+    confirmed:  true
+    createdAt:  xxxx-xx-xx 
+
+*/
+    var CardSchema = mongoose.Schema;   //imported to use a card IDs to add to an array
+    var UserSchema = mongoose.Schema;
+
+const OrderSchema = new mongoose.Schema({
+    customerId:   {
+        type: UserSchema.ObjectId,  //
+        required: true
+    },
+    cardIds: {
+      type: [CardSchema.ObjectId],
+    },
+    price: {
+        type: String,
+        required: true
+    },
+    confirmed: {
+        type: boolean,
+        default: false,
+        required: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now
+    },
+  });
+  
+  module.exports = mongoose.model('Card', CardSchema);
+
+
+
+
 //shopping cart is represented by an object with some public properties
 //the shopping cart only needs to track the array of Card objects that a user has added to their cart
+/*
 class Cart {
     constructor() {
        this.data = {};
@@ -11,6 +52,7 @@ class Cart {
  
  module.exports = new Cart();
 
+ */
 
 
 /*cart constructors -- an alternative way to make a shopping cart i played around with.

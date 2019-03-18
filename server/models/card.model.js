@@ -1,20 +1,7 @@
 const mongoose = require('mongoose');
 
-/* example 1
-playerName: Allen Iverson
-cardSet:    Collector's Edge Rookie Rage - Die Cuts
-cardNumber: 19
-cardsInSet: 50
-sport:      BASKETBALL
-cardYear:   1996
-quality:    mint
-imageFront:   http://
-imageBack:    http://
-quantity:   1
-createdAt:  *whenever this entry was created*
-*/
-
 /* current 
+    _id:                xxxxxxxx
     playerName:         Allen Iverson
     team:               Philadelphia 76ers
     cardDescription:    Collector's Edge Rookie Rage - Die Cuts
@@ -23,6 +10,9 @@ createdAt:  *whenever this entry was created*
     imageBack:          http://
 */
 
+
+//the card id is card._id
+//every card object is automatically assigned an id when it is created
 const CardSchema = new mongoose.Schema({
   playerName: {
     type: String,
@@ -35,7 +25,7 @@ const CardSchema = new mongoose.Schema({
   team: {
     type: String,
   },
-  cardDescription: {
+  description: {
       type: String,
       required: true
   },
