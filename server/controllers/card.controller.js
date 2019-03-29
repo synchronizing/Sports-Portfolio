@@ -1,6 +1,16 @@
 var mongoose = require('mongoose');
     Card = require('../models/card.model.js');  
 
+    /* methods:
+        .create -- create a card
+        .read -- show current card's info
+        .delete -- delete a card by its id
+        .list -- return all cards in json format sorted by playerName
+        .update -- update a card's information
+        .cardById -- retrieve a card by its id
+    */
+
+
     /* Create a Card */
 exports.create = function(req, res) {
   /* Instantiate a Card */
@@ -17,6 +27,13 @@ exports.create = function(req, res) {
   });
 };
 
+    /* Show the current Card */
+exports.read = function(req, res) {
+    /* send back the card as json from the request */
+    res.json(req.card);
+  };
+  
+
   /* Delete a Card */
   //This should only be available for administrators to access.!!!!!
 exports.delete = function(req, res) {
@@ -27,7 +44,7 @@ exports.delete = function(req, res) {
         console.log(err);
        res.status(400).send(err);
       }
-      //res.json(req.listing);
+      //res.json(req.card);
       res.status(200).send({message: "Card Deleted Successfully"});
     });
   };

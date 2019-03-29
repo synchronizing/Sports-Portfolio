@@ -1,46 +1,41 @@
 const mongoose = require('mongoose');
 
-/* current 
-    _id:                xxxxxxxx
-    playerName:         Allen Iverson
-    team:               Philadelphia 76ers
-    cardDescription:    Collector's Edge Rookie Rage - Die Cuts
-    sport:              Basketball
-    imageFront:         http://
-    imageBack:          http://
-*/
-
 
 //the card id is card._id
 //every card object is automatically assigned an id when it is created
 var CardSchema = new mongoose.Schema({
-  playerName: {
-    type: String,
-    required: true
-  },
-  bought:   {
-      type: boolean,
-      required: true
-  },
-  team: {
-    type: String,
-  },
-  description: {
+  card: {
+    set: {
       type: String,
-      required: true
-  },
-  sport: {
+      required: true,
+    },
+    sport: {
       type: String,
       enum: ['BASKETBALL', 'BASEBALL', 'HOCKEY', 'BOXING', 'FOOTBALL', 'GOLF', 
       'HOCKEY', 'MMA', 'SOCCER', 'TENNIS', 'GAMING', 'MISC', 'RACING', 'WRESTLING', 'NON-SPORT'],
-      required: true
+      required: true,
+    },
+    year: String,
+    condition: String,
+    setAmount: Number,
   },
-  imageFront: {
+  player: {
+    name: {
       type: String,
-      required: true
+      required: true,
+    },
+    team: String,
+    league: String,
+    setNumber: Number,
   },
-  imageBack: {
-      type: String,
+  images: {
+    front: String,
+    back: String,
+    other: [ ],
+  },
+  bought:   {
+      type: Boolean,
+      default: false,
       required: true
   },
   createdAt: {

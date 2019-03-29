@@ -4,6 +4,8 @@ const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
 const config = require('./config');
 
+
+
 // connect to mongo db
 const mongoUri = config.mongo.host;
 mongoose.connect(mongoUri, { keepAlive: 1 });

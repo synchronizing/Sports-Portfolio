@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 /*
-    _id:        xxxxx
-    customerId:     
-    cardIds:    []
-    price:      $xxx
+    _id:        ObjectId
+    customerId: user.ObjectId    
+    cardIds:    [card.ObjectId]
+    price:      number
     confirmed:  true
     createdAt:  xxxx-xx-xx 
-
+    updatedAt:  xxxx-xx-xx
 */
     var CardSchema = mongoose.Schema;   //imported to use a card IDs to add to an array
-    var UserSchema = mongoose.Schema;
+    var UserSchema = mongoose.Schema;   //imported to fetch the user's ObjectId
 
 var OrderSchema = new mongoose.Schema({
     customerId:   {

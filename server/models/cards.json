@@ -1,0 +1,42 @@
+{
+    "cards": [
+        {
+            "card": {
+                "set": "Collectors Edge Rookie Rage - Key Kraze Holofoil",
+                "sport": "BASKETBALL",
+                "year": "1996",
+                "condition": "Mint",
+                "setAmount": 25
+            },
+            "player": {
+                "name": "Ray Allen",
+                "team": "Minnesota Timberwolves",
+                "league": "NBA",
+                "setNumber": 25
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/77692/77692-7078484Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/77692/77692-7078484Bk.jpg"
+            }
+        },
+        {
+            "card": {
+                "set": "Bazooka",
+                "sport": "BASEBALL",
+                "year": "2004",
+                "condition": "Mint",
+                "setAmount": 300
+            },
+            "player": {
+                "name": "David Ortiz",
+                "team": "Boston Red Sox",
+                "league": "MLB",
+                "setNumber": 110
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Baseball/1730/1730-110Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Baseball/1730/1730-186281Bk.jpg"
+            }  
+        }
+    ]
+}

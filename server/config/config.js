@@ -19,7 +19,7 @@ const envVarsSchema = Joi.object({
   JWT_SECRET: Joi.string().required()
     .description('JWT Secret required to sign'),
   MONGO_HOST: Joi.string().required()
-    .description('Mongo DB host url'),
+    .description('Mongo URI'),
   MONGO_PORT: Joi.number()
     .default(27017)
 }).unknown()
@@ -29,6 +29,7 @@ const { error, value: envVars } = Joi.validate(process.env, envVarsSchema);
 if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
+
 
 const config = {
   env: envVars.NODE_ENV,
