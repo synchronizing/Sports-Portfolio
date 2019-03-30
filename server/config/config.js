@@ -39,7 +39,10 @@ const config = {
   frontend: envVars.MEAN_FRONTEND || 'angular',
   mongo: {
     host: envVars.MONGO_HOST,
-    port: envVars.MONGO_PORT
+    port: envVars.MONGO_PORT,
+    options: {
+      //See documentation for this
+    }
   }
 };
 

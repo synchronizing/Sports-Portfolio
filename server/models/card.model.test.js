@@ -24,11 +24,10 @@ testCard = {
     }
 }
 
-
 describe('Card Schema Unit Tests', function() {
 
   before(function(done) {
-    mongoose.connect(config.mongo.host, config.jwtSecret);
+    mongoose.connect(config.mongo.host, config.mongo.options);
     done();
   });
 
