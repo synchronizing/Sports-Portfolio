@@ -13,7 +13,7 @@ Make sure to have `mongodb` running in the background (instructions for Mongo be
 git clone https://github.com/synchronizing/Sports-Portfolio/
 cd Sports-Portfolio/
 npm install
-npm start (for development)
+npm start
 ```
 
 #### Mongodb
