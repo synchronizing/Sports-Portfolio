@@ -52,7 +52,7 @@ exports.delete = function(req, res) {
 
 /* Retreive all the cards in the directory, sorted alphabetically by playerName */
 exports.list = function(req, res) {
-    Card.find().sort('playerName').exec(function(err, card) {
+    Card.find().sort('card.set').exec(function(err, card) {
       if(err) {
         res.status(400).send(err);
       }
