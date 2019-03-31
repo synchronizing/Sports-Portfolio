@@ -106,7 +106,7 @@ describe('Card Schema Unit Tests', function() {
 
   afterEach(function(done) {
     if(id) {
-      Card.remove({ _id: id }).exec(function() {
+      Card.deleteOne({ _id: id }).exec(function() {
         id = null;
         done();
       });
