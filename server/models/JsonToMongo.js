@@ -11,14 +11,14 @@ var fs = require('fs'),
     config = require('../config/config.js');
 
 /* Connect to your database */
-mongoose.connect(config.mongo.host, config.mongo.port, {useNewUrlParser: true});
+mongoose.connect(config.mongo.host, config.mongo.options);
 
 
 console.log(cardsJSON.cards.length);
 
 for ( var i=0; i < cardsJSON.cards.length; i++ ) {
     var card = Card(cardsJSON.cards[i]);
-    console.log(cardsJSON.cards[i].set);
+    console.log(cardsJSON.cards[i].card.set);
     card.save(function(err) {
      if(err) throw err;
                  });
