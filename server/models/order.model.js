@@ -22,7 +22,7 @@ var OrderSchema = new mongoose.Schema({
     },
     price: {
         type: String,
-        required: true
+        required: false,
     },
     confirmed: {
         type: boolean,
