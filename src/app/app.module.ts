@@ -4,17 +4,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
-
+//Root component
 import { AppComponent } from './app.component';
+
+//Contains angular material by default
+import { SharedModule } from './shared/shared.module';
+
+//Auth
+import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+
+//Interceptors
 import { AuthHeaderInterceptor } from './interceptors/header.interceptor';
 import { CatchErrorInterceptor } from './interceptors/http-error.interceptor';
 
+//Router
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
+//Components
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+
+//Dependencies
+import {SuiModule} from 'ng2-semantic-ui';
 
 @NgModule({
   declarations: [
@@ -31,7 +43,9 @@ import { HomeComponent } from './home/home.component';
     AuthModule,
     AdminModule,
     AppRoutingModule,
+    SuiModule
   ],
+  // Intercept HTTP requests
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthHeaderInterceptor,
