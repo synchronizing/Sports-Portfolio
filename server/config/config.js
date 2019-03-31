@@ -41,6 +41,7 @@ const config = {
     host: envVars.MONGO_HOST,
     port: envVars.MONGO_PORT,
     options: {
+      useNewUrlParser: true,
       //See documentation for this
     }
   }
