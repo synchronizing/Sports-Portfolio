@@ -19,7 +19,7 @@ var cards = require('../controllers/card.controller.js'),
  */
  //   /api/userapi/     routes
 router.route('/')
-  // able to see get cards
+  // able to see get ALL cards
   .get(cards.list);
 
 
