@@ -14,29 +14,30 @@ var cards = require('../controllers/card.controller.js'),
     express = require('express'),
     router = express.Router();
 
+    /*
+  The ':' specifies a URL parameter. 
+ */
  //   /api/userapi/     routes
 router.route('/')
+  // able to see get cards
   .get(cards.list);
 
 
 //    /api/userapi/:userId    routes
 router.route('/:userId')
+  //able to get their order by their userid
   .get(orders.read)
+  //able to update their order by their userid
+  .put(orders.update)
+  //able to send their order by email
   .post(orders.sendMail);
-
-
-
-/*
-  The ':' specifies a URL parameter. 
- */
 
  //   /api/userapi/:cardId    routes
 router.route('/:cardId')
-  .get(cards.read)
-  .put(cards.update)
-  .delete(cards.delete);
-
+  //able to access the info of a specific card
+  .get(cards.read);
 
 router.param('cardId', cards.cardById);
+router.param('orderId', orders.orderById);
 
 module.exports = router;
