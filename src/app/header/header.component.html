@@ -1,16 +1,37 @@
 <header>
-  <mat-toolbar color="primary">
-    <a [routerLink]="['/']" class="logo"></a>
-    <span class="example-spacer"></span>
-    <a class="links side" [routerLink]="['/auth/login']" *ngIf="!user">Login</a>
-    <div>
-      <a class="links side" *ngIf="user" [matMenuTriggerFor]="menu">
-        <mat-icon>account_circle</mat-icon>{{user.fullname}}
-      </a>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngIf="user && user.isAdmin" [routerLink]="['/admin']">admin</button>
-        <button mat-menu-item (click)="logout()">logout</button>
-      </mat-menu>
+
+  <!--navbar-->
+  <div class="ui menu top inverted teal fixed">
+
+    <!--site logo routes to home-->
+    <div class="item">
+      <img [routerLink]="['/']" src="../../assets/logo.png">
     </div>
-  </mat-toolbar>
+
+    <!--about-->
+    <a class="item" [routerLink]="['/about']">
+      about
+    </a>
+
+    <!--if(user) then login-->
+    <a class="item" [routerLink]="['/auth/login']" *ngIf="!user; else account">
+      login
+    </a>
+
+    <!--else account_dropdown-->
+    <ng-template #account>
+      <div class="ui dropdown item">
+        my account
+        <i class="dropdown icon"></i>
+
+        <!--submenu-->
+        <div class="menu">
+          <div class="item"> cart </div>
+          <div class="item"> settings </div>
+          <div class="item" (click)=logout> logout</div>
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
 </header>
