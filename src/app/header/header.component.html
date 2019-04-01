@@ -1,32 +1,34 @@
 <header>
 
   <!--navbar-->
-  <div class="ui massive stackable menu top primaryColor">
+  <div class="ui stackable menu top primaryColor">
 
     <!--site logo routes to home-->
     <div class="header item">
-      <img [routerLink]="['/']" src="../../assets/logo.png">
+      <!-- <img [routerLink]="['/']" src="../../assets/logo.png"> -->
       <span class="text">Sports Portfolio</span>
     </div>
 
-    <!--catalog-->
-    <a class="item" [routerLink]="['/']">
-      catalog
-    </a>
+    <div class="right menu">
+      <!--catalog-->
+      <a class="item" [routerLink]="['/']">
+        catalog
+      </a>
 
-    <!--about-->
-    <a class="item" [routerLink]="['/about']">
-      about
-    </a>
+      <!--about-->
+      <a class="item" [routerLink]="['/about']">
+        about
+      </a>
 
-    <!--if(user) then login-->
-    <a class="item" [routerLink]="['/auth/login']" *ngIf="!user; else account">
-      login
-    </a>
+      <!--if(user) then login-->
+      <a class="item" [routerLink]="['/auth/login']" *ngIf="!user; else account">
+        login
+      </a>
 
-    <a class="item" [routerLink]="['/auth/register']" *ngIf="!user">
-      signup
-    </a>
+      <a class="item" [routerLink]="['/auth/register']" *ngIf="!user">
+        signup
+      </a>
+    </div>
 
     <!--else account_dropdown-->
     <ng-template #account>
