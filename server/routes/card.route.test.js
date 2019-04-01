@@ -1,11 +1,10 @@
 var should = require('should'), 
     request = require('supertest'), 
     express = require('../config/express'), 
-    Card = require('../models/card.model.js'),
-    Order = require('../models/order.model.js');
+    Card = require('../models/card.model.js');
 
 /* Global variables */
-var app, agent, card, id, order;
+var app, agent, card, id;
 
 /* Unit tests for testing server side routes for the card and order API */
 //going in order of userapi.route.js
@@ -20,9 +19,11 @@ describe('Listings CRUD tests', function() {
 
     done();
   });
-// api/userapi/ 'a user should be able to see the card db'
+
+/* Card Route Unit Tests */
+
   it('should be able to retrieve all cards', function(done) {
-    agent.get('/api/userapi/')
+    agent.get('/api/card/')
       .expect(200)
       .end(function(err, res) {
         should.not.exist(err);
@@ -31,26 +32,26 @@ describe('Listings CRUD tests', function() {
         done();
       });
   });
-// api/userapi/:userId  'a user should be able to see their order'
-  it('should be able to retrieve a their own order', function(done) {
-    Order.findOne({_id: "5ca23c9897689ffb2abd3fe0"}, function(err, order) {
+
+  it('should be able to see a specific card', function(done) {
+    Card.findOne({_id: "5ca0f66b7724f0eeeaab1c1f"}, function(err, card) {
       if(err) {
         console.log(err);
       } else {
-        agent.get('/api/userapi/' + order.customerId)
+        agent.get('/api/card/' + card.id)
           .expect(200)
           .end(function(err, res) {
             should.not.exist(err);
             should.exist(res);
-            res.body.cardIds.should.equal(["5ca0f66b7724f0eeeaab1c20", "5ca0f66b7724f0eeeaab1c23", "5ca0f66b7724f0eeeaab1c21"]);
-            res.body.customerId.should.equal(order.customerId.toString());
+            res.body.player.name.should.equal("Ray Allen");
+            res.body.id.should.equal(card.id.toString());
             done();
           });
       }
     });
   });
 
-  // api/userapi/:userId  'a user should be able to send an email of their order'
+/*
   it('should be able to send an email of their order', function(done) {
     Order.findOne({_id: "5ca23c9897689ffb2abd3fe0"}, function(err, order) {
       if(err) {
@@ -129,10 +130,11 @@ describe('Listings CRUD tests', function() {
     
     });
   });
+  */
 
   after(function(done) {
     if(id) {
-      Listing.remove({_id: id}, function(err){
+      Card.remove({_id: id}, function(err){
         if(err) throw err;
         done();
       })
