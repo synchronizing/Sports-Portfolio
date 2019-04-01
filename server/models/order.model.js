@@ -25,7 +25,7 @@ var OrderSchema = new mongoose.Schema({
         required: false,
     },
     confirmed: {
-        type: boolean,
+        type: Boolean,
         default: false,
         required: true
     },
