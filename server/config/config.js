@@ -19,7 +19,7 @@ const envVarsSchema = Joi.object({
   JWT_SECRET: Joi.string().required()
     .description('JWT Secret required to sign'),
   MONGO_HOST: Joi.string().required()
-    .description('Mongo DB host url'),
+    .description('Mongo URI'),
   MONGO_PORT: Joi.number()
     .default(27017)
 }).unknown()
@@ -30,6 +30,7 @@ if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
+
 const config = {
   env: envVars.NODE_ENV,
   port: envVars.SERVER_PORT,
@@ -38,7 +39,11 @@ const config = {
   frontend: envVars.MEAN_FRONTEND || 'angular',
   mongo: {
     host: envVars.MONGO_HOST,
-    port: envVars.MONGO_PORT
+    port: envVars.MONGO_PORT,
+    options: {
+      useNewUrlParser: true,
+      //See documentation for this
+    }
   }
 };
 

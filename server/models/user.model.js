@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   roles: [{
-    type: String,
+    type: String, //roles are 'admin' or 'user'
   }]
 }, {
   versionKey: false
