@@ -3,9 +3,8 @@ FROM node:8
 WORKDIR /usr/src/app
 ADD . /usr/src/app
 
-RUN yarn
-RUN yarn build
+RUN npm install -g @angular/cli
 
-EXPOSE 4040
+EXPOSE 80
 
-CMD ["yarn", "serve"]
+CMD ng serve --host 0.0.0.0 --port 80

@@ -2,18 +2,34 @@ version: '3'
 
 services:
   app:
-    build: ./
+
     image: mean
-    expose:
-      - 4040
-    environment:
-      NODE_ENV: production
-      SERVER_PORT: 4040
-      JWT_SECRET: 0a6b944d-d2fb-46fc-a85e-0295c986cd9f
-      MONGO_HOST: mongodb://mongo/odmp
+    container_name: mean
+
+    # Misc
+    build: .
     restart: always
     depends_on:
       - mongo
 
+    # Ports
+    expose:
+      - 80
+    ports:
+      - "80:80"
+
+    # Volumes
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+    # Env
+    environment:
+      NODE_ENV: production
+      SERVER_PORT: 80
+      JWT_SECRET: 0a6b944d-d2fb-46fc-a85e-0295c986cd9f
+      MONGO_HOST: mongodb://mongo/odmp
+
   mongo:
     image: mongo:3.6
+    container_name: mongo
