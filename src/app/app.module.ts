@@ -21,9 +21,10 @@ import { CatchErrorInterceptor } from './interceptors/http-error.interceptor';
 //Router
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
-//Components
+//View components
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -33,6 +34,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
