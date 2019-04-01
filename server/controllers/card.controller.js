@@ -63,25 +63,37 @@ exports.list = function(req, res) {
 /* retrieve a card and update its properties! */
 /* This should only be available for admins to access */
 exports.update = function(req, res) {
-    var card = req.card;
-  
-    card.playerName = req.body.playerName;
-    card.bought = req.body.bought;
-    card.team = req.body.team;
-    card.description = req.body.description;
-    card.sport = req.body.sport;
-    card.imageFront = req.body.imageFront;
-    card.imageBack = req.body.imageBack;
-  
-    card.save(function(err) {
-      if (err) {
-        console.log(err);
-        res.status(400).send(err);
-      } else {
-        res.json(card);
+    Card.findById({_id: req.params.id}, function(err, card) {
+      //return 404 if the card is not found
+      if(err) {
+        res.status(404).send(err);
+      }
+      else {
+        if (req.body.card.set) card.card.set = req.body.card.set;
+        if (req.body.card.sport) card.card.sport = req.body.card.sport;
+        if (req.body.card.year) card.card.year = req.body.card.year;
+        if (req.body.card.condition) card.card.condition = req.body.card.condition;
+        if (req.body.card.setAmount) card.card.setAmount = req.body.card.setAmount;
+        if (req.body.player.name) card.player.name = req.body.player.name;
+        if (req.body.player.team) card.player.team = req.body.player.team;
+        if (req.body.player.league) card.player.league = req.body.player.league;
+        if (req.body.player.setNumber) card.player.setNumber = req.body.player.setNumber;
+        if (req.body.images.front) card.images.front = req.body.images.front;
+        if (req.body.images.back) card.images.back = req.body.images.back;
+        if (req.body.bought) card.bought = req.body.bought;
+
+        card.save(function(err) {
+          //return 500 if there is an error
+          if(err) {
+            res.status(500).send(err);
+          }
+          else {
+            res.json(card);
+          }
+        });
       }
     });
-  };
+};
 
   /* retrieve a card by its particular id */
   exports.cardById = function(req, res, next, id) {
