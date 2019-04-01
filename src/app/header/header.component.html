@@ -1,12 +1,18 @@
 <header>
 
   <!--navbar-->
-  <div class="ui menu top inverted teal fixed">
+  <div class="ui massive stackable menu top primaryColor">
 
     <!--site logo routes to home-->
-    <div class="item">
+    <div class="header item">
       <img [routerLink]="['/']" src="../../assets/logo.png">
+      <span class="text">Sports Portfolio</span>
     </div>
+
+    <!--catalog-->
+    <a class="item" [routerLink]="['/']">
+      catalog
+    </a>
 
     <!--about-->
     <a class="item" [routerLink]="['/about']">
@@ -18,14 +24,17 @@
       login
     </a>
 
+    <a class="item" [routerLink]="['/auth/register']" *ngIf="!user">
+      signup
+    </a>
+
     <!--else account_dropdown-->
     <ng-template #account>
-      <div class="ui dropdown item">
-        my account
+      <div class="ui dropdown item" suiDropdown>
+        <span class="text"> my account </span>
         <i class="dropdown icon"></i>
-
         <!--submenu-->
-        <div class="menu">
+        <div class="menu" suiDropdownMenu>
           <div class="item"> cart </div>
           <div class="item"> settings </div>
           <div class="item" (click)=logout> logout</div>
