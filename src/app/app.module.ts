@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 //View components
 import { HeaderComponent } from './header/header.component';
+import { NavigatorComponent } from './navigator/navigator.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SideFilterComponent } from './side-filter/side-filter.component';
@@ -36,6 +37,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
+    NavigatorComponent,
     SideFilterComponent
   ],
   imports: [
