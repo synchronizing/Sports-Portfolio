@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 const path = require('path');
 
 const config = require("../../config/config.js");
-const Card = require("../order.model.js");
+const Order = require("../order.model.js");
 
 // Connecting to db.
 mongoose.connect(config.mongo.host, config.mongo.options);
 
 // Loading orders.
-var orderListings = JSON.parse(fs.readFileSync(path.join(__dirname, '/json/order.json'), 'utf8'));
+var orderListings = JSON.parse(fs.readFileSync(path.join(__dirname, '/json/orders.json'), 'utf8'))['orders'];
 
 // Insert demo cards into the database.
 Order.collection.insertMany(orderListings, function(err, results) {
