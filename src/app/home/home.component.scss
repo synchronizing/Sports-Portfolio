@@ -1,8 +1,15 @@
+.main {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .pad {
-  padding-top: 50px;
+  margin-top: 50px;
+  margin-bottom: 75px;
+  position: auto;
 }
 
 .sidebar {
-  padding: 10px;
+  margin: 10px;
   position: absolute;
 }
