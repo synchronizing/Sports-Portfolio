@@ -3,16 +3,7 @@
 
 <!--App body-->
 <div class="ui container page">
-  <sui-sidebar-container class="bottom attached segment">
-    <sui-sidebar class="vertical visible" [isVisible]="true" #sidebar>
-      <app-filter></app-filter>
-    </sui-sidebar>
-
-    <sui-sidebar-sibling class="ui container pad">
-      <router-outlet></router-outlet>
-    </sui-sidebar-sibling>
-
-  </sui-sidebar-container>
+  <router-outlet></router-outlet>
 </div>
 
 

@@ -1,1 +1,9 @@
-<app-navigator></app-navigator>
+<sui-sidebar-container class="bottom segment">
+  <sui-sidebar class="vertical visible" [isVisible]="true" #sidebar style="display: block;">
+    <app-filter></app-filter>
+  </sui-sidebar>
+
+  <sui-sidebar-sibling class="ui container pad">
+    <app-navigator></app-navigator>
+  </sui-sidebar-sibling>
+</sui-sidebar-container>
