@@ -22,6 +22,7 @@ const UserSchema = new mongoose.Schema({
   },
   roles: [{
     type: String, //roles are 'admin' or 'user'
+    default: 'user'
   }]
 }, {
   versionKey: false
