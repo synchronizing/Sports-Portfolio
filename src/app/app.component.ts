@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { MatIconRegistry } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
 
-
 import { AuthService } from './auth/auth.service';
 import * as schema from './schema/equipment.json';
 
@@ -50,7 +49,7 @@ export class AppComponent implements OnInit {
     this.router.navigate([link]);
   }
 
-  ngOnDestroy() { 
+  ngOnDestroy() {
     if (this.userSubscription) {
       this.userSubscription.unsubscribe();
     }
