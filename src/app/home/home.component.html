@@ -1,9 +1,16 @@
-<sui-sidebar-container class="bottom segment">
-  <sui-sidebar class="vertical visible" [isVisible]="true" #sidebar style="display: block;">
-    <app-filter></app-filter>
-  </sui-sidebar>
+<sui-sidebar-container class="bottom segment main">
+  <div class="ui grid">
+    <div class="one wide column">
 
-  <sui-sidebar-sibling class="ui container pad">
-    <app-navigator></app-navigator>
-  </sui-sidebar-sibling>
+      <sui-sidebar class="vertical visible sidebar" [isVisible]="true" #sidebar>
+        <app-filter></app-filter>
+      </sui-sidebar>
+    </div>
+
+    <div class="eleven wide column">
+      <sui-sidebar-sibling class="ui container pad">
+        <app-navigator></app-navigator>
+      </sui-sidebar-sibling>
+    </div>
+  </div>
 </sui-sidebar-container>
