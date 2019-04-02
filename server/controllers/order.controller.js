@@ -99,5 +99,19 @@ exports.sendMail = function (req, res) {
     });
 }
 
+  /* retrieve a order by its particular id */
+  exports.orderById = function(req, res, next, id) {
+
+    Order.findById(id).exec(function(err, order) {
+      if(err) {
+        console.log(err);
+        res.status(400).send(err);
+      } else {
+        req.order = order;
+        next();
+      }
+    });
+  };
+
 
 

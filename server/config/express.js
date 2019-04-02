@@ -16,7 +16,6 @@ const passport = require('./passport')
 
 const app = express();
 
-var userApiRoutes = require('../routes/userapi.route');
 
 if (config.env === 'development') {
   app.use(logger('dev'));
@@ -63,7 +62,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // API router
 app.use('/api/', routes);
-app.use('api/userapi', userApiRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

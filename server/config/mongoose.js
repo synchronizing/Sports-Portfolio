@@ -8,9 +8,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-// connect to mongo db
 const mongoUri = config.mongo.host;
-mongoose.connect(mongoUri, { useNewUrlParser: true });
+// connect to mongo db
+mongoose.connect(mongoUri, config.mongo.options);
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${mongoUri}`);
 });
