@@ -27,6 +27,8 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SideFilterComponent } from './side-filter/side-filter.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -38,7 +40,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     HomeComponent,
     AboutComponent,
     NavigatorComponent,
-    SideFilterComponent
+    SideFilterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
