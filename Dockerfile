@@ -4,8 +4,9 @@ WORKDIR /usr/src/app
 ADD . /usr/src/app
 
 RUN npm install -g @angular/cli
+RUN npm install
 
 EXPOSE 80
 
 CMD node server/models/misc/CardsToMongo.js
-CMD ng serve --host 0.0.0.0 --port 80
+CMD npm start
