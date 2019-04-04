@@ -42,6 +42,7 @@ const config = {
     port: envVars.MONGO_PORT,
     options: {
       useNewUrlParser: true,
+      keepAlive: 1
       //See documentation for this
     }
   }
