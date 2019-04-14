@@ -29,6 +29,11 @@ import { AboutComponent } from './about/about.component';
 import { SideFilterComponent } from './side-filter/side-filter.component';
 import { FooterComponent } from './footer/footer.component';
 
+//Services & their Components
+import { CardService } from './services/card.service';
+import { OrderService } from './services/order.service';
+import { ViewCardComponent } from './view-card/view-card.component';
+
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -41,7 +46,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     AboutComponent,
     NavigatorComponent,
     SideFilterComponent,
-    FooterComponent
+    FooterComponent,
+    ViewCardComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     provide: HTTP_INTERCEPTORS,
     useClass: CatchErrorInterceptor,
     multi: true,
-  }],
+  },
+  CardService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
