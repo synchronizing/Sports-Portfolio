@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http,Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import { CardInterface } from '../models/Card'
 
@@ -11,8 +11,12 @@ export class CardService {
 
     constructor(private http: Http) { }
 
-    private serverApi= 'http://localhost:4040/api';
-
+    //get all cards from api
+    getAllCards() {
+        return this.http.get('/api/card')
+            .map(res => res.json());
+    }
+    /*
     public getAllCards():Observable<CardInterface[]> {
 
         let URI = `${this.serverApi}/card/`;
@@ -20,5 +24,6 @@ export class CardService {
             .map(res => res.json())
             .map(res => <CardInterface[]>res.cards);
     }
+    */
 
 }
