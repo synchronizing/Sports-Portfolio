@@ -9,7 +9,7 @@ import { CardInterface } from '../models/Card'
 })
 export class NavigatorComponent implements OnInit {
 
-  cards: CardInterface[] = [];
+  card: CardInterface[] = [];
 
 
 
@@ -23,7 +23,7 @@ export class NavigatorComponent implements OnInit {
   public loadCards() {
     //get all cards from server and update the cards property
     this.cardServ.getAllCards().subscribe(
-      response => this.cards = response)
+      response => this.card = response)
   }
 
     /*deleteCard. The deleted card is being filtered out using the .filter method

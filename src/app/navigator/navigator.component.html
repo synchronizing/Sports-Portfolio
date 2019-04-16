@@ -1,59 +1,12 @@
-<!-- Table starts here -->
-<table id="table">
-    <thead>
-      <tr>
-        <th>Card Set</th>
-        <th>Card Sport</th>
-        <th>Card Year</th>
-        <th>Card Condition</th>
-        <th>Card SetAmount</th>
-
-        <th>Player Name</th>
-        <th>Player Team</th>
-        <th>Player League</th>
-        <th>Player SetNumber</th>
-
-        <th>Image Front</th>
-        <th>Image Back</th>
-        <th>Image Other</th>
-
-        <th>Bought</th>
-
-        <th>Add to Order</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let card of cards">
-        <td>{{card.card.set}}</td>
-        <td>{{card.card.sport}}</td>
-        <td>{{card.card.year}}</td>
-        <td>{{card.card.condition}}</td>
-        <td>{{card.card.setAmount}}</td>
-
-        <td>{{card.player.name}}</td>
-        <td>{{card.player.team}}</td>
-        <td>{{card.player.league}}</td>
-        <td>{{card.player.setNumber}}</td>
-
-        <td>{{card.image.front}}</td>
-        <td>{{card.image.back}}</td>
-        <td>{{card.image.other}}</td>
-
-        <td>{{card.bought}}</td>
-        <td> <button type="button" (click)="addToOrder(card); $event.stopPropagation();">Add To Order</button></td>
-
-      </tr>
-    </tbody>
- </table>
 
 
-<!--
+
 
 <div class="ui four doubling cards">
   <tr *ngFor="let card of cards">
     <div class="card">
       <div class="image">
-        <img src="{{card.image.front}}">
+        <img src="{{cards.image.front}}">
       </div>
       <div class="content">
         <div class="header">{{card.player.name}}</div>
@@ -74,4 +27,3 @@
 
   </tr>
 </div>
--->
