@@ -11,7 +11,7 @@ export class CardService {
 
     constructor(private http: Http) { }
 
-    private serverApi= 'http://localhost:4040';
+    private serverApi= 'http://localhost:4040/api';
 
     public getAllCards():Observable<CardInterface[]> {
 
