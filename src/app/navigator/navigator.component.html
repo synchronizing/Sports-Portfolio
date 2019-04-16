@@ -6,9 +6,9 @@
 -->
 
 <div class="ui four doubling cards">
-    <div ng-repeat="card in cards" class="card">
+    <div class="card" *ngFor="let card of cards">
       <div class="image">
-        <img src="{{cards.image.front}}">
+        <img src="{{card.image.front}}">
       </div>
       <div class="content">
         <div class="header">{{card.player.name}}</div>
