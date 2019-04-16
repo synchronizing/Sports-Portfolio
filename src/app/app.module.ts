@@ -31,8 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 
 //Services & their Components
 import { CardService } from './services/card.service';
-import { OrderService } from './services/order.service';
-import { ViewCardComponent } from './view-card/view-card.component';
+//import { OrderService } from './services/order.service';
 
 
 //Dependencies
@@ -46,8 +45,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     AboutComponent,
     NavigatorComponent,
     SideFilterComponent,
-    FooterComponent,
-    ViewCardComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
