@@ -1,10 +1,12 @@
 
 
-
+<!--
+  This isn't working as is. We need this to repeat the cards, until it reaches the end of the card list. Also this might be where we
+  want to implement infinite scroll.
+-->
 
 <div class="ui four doubling cards">
-  <tr *ngFor="let card of cards">
-    <div class="card">
+    <div ng-repeat="card in cards" class="card">
       <div class="image">
         <img src="{{cards.image.front}}">
       </div>
@@ -24,6 +26,4 @@
         </span>
       </div>
     </div>
-
-  </tr>
 </div>
