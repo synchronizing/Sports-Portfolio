@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/auth-guard.service';
 import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
+import { NavigatorComponent } from '../navigator/navigator.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,7 +17,13 @@ const routes: Routes = [{
 }, {
   path: 'about',
   component: AboutComponent
-}];
+},
+{
+  path: 'card',
+  component: NavigatorComponent,
+  data: { title: 'Card List' }
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
