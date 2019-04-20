@@ -23,12 +23,14 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 //View components
 import { HeaderComponent } from './header/header.component';
-import { NavigatorComponent } from './navigator/navigator.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { SideFilterComponent } from './side-filter/side-filter.component';
 import { FooterComponent } from './footer/footer.component';
 
+// Home View Components
+import { HomeComponent } from './home/home.component';
+import { SideFilterComponent } from './home/components/side-filter/side-filter.component';
+import { NavigatorComponent } from './home/components/navigator/navigator.component';
+import { CardComponent } from './home/components/card/card.component';
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -41,7 +43,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     AboutComponent,
     NavigatorComponent,
     SideFilterComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
