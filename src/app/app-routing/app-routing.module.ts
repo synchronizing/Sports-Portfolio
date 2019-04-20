@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/auth-guard.service';
+
+// Home 
 import { HomeComponent } from '../home/home.component';
+import { NavigatorComponent } from '../home/components/navigator/navigator.component';
+
 import { AboutComponent } from '../about/about.component';
-import { NavigatorComponent } from '../navigator/navigator.component';
 
 const routes: Routes = [{
   path: '',
