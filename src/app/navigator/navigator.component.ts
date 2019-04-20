@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../services/card.service';
 import { CardInterface } from '../models/Card'
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigator',
@@ -8,29 +10,20 @@ import { CardInterface } from '../models/Card'
   styleUrls: ['./navigator.component.scss']
 })
 export class NavigatorComponent implements OnInit {
-
-  card: CardInterface[] = [];
-
-
+  
+  card: any;
 
 
   constructor(private cardServ: CardService) { }
 
   ngOnInit() {
-    this.loadCards();
+    this.cardServ.getAllCards()
+      .subscribe(res => {
+        console.log(res);
+        this.card = res;
+      }, err => {
+        console.log(err);
+      });
   }
-
-  public loadCards() {
-    //get all cards from server and update the cards property
-    this.cardServ.getAllCards().subscribe(
-      response => this.card = response)
-  }
-
-    /*deleteCard. The deleted card is being filtered out using the .filter method
-    public deleteCard(card: CardInterface) {
-      this.cardServ.deleteCard(card._id).subscribe(
-        response =>    this.cards = this.cards.filter(cards => cards !== card),)
-      }
-      */
 
 }
