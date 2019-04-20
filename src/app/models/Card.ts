@@ -8,6 +8,8 @@ export interface CardInterface {
     player: Player;
     images: Images;
     bought: boolean;
+    createdAt: Date;
+    updatedAt?: Date;
 }
 
 interface Card {
