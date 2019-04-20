@@ -8,4 +8,5 @@ RUN npm install -g @angular/cli
 EXPOSE 80
 
 RUN node server/models/misc/CardsToMongo.js
-CMD ng serve --host 0.0.0.0 --port 80
+CMD npm start
+//CMD ng serve --host 0.0.0.0 --port 80
