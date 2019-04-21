@@ -25,9 +25,9 @@ export class OrderComponent implements OnInit {
     //this.authServ.$userSource.asObservable();
     //this.customerId = $userSource._id;
     //Here is where we need to get the user._id;
-    
-
-    this.orderServ.getOrder(this.customerId)
+    this.user = this.authServ.me();
+    console.log(this.user._id);
+    this.orderServ.getOrder(this.user._id)
       .subscribe(res => {
         console.log(res);
         this.order = res;
