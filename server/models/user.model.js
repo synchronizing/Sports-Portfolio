@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+var OrderSchema = mongoose.Schema;  //imported for created an order when a new user is created
+var Order = require('./order.model');
 
 const UserSchema = new mongoose.Schema({
   fullname: {
@@ -26,6 +28,20 @@ const UserSchema = new mongoose.Schema({
   }]
 }, {
   versionKey: false
+});
+
+UserSchema.post('save', function(next) {
+  console.log('A user was created.');
+
+  Order.create({customerId: this._id}, function(err) {
+    if(err) console.log(err);
+    else console.log('An order was created for the user too!');
+  });
+
+  this.updatedAt = currentTime;
+  //when a new user is created, a new order is also created for the user.
+
+  next();
 });
 
 

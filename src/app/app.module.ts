@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import { RouterModule, PreloadAllModules, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 //Root component
 import { AppComponent } from './app.component';
@@ -26,6 +27,10 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 
+//Services & their Components
+import { CardService } from './services/card.service';
+//import { OrderService } from './services/order.service';
+
 // Home View Components
 import { HomeComponent } from './home/home.component';
 import { SideFilterComponent } from './home/components/side-filter/side-filter.component';
@@ -45,6 +50,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     FooterComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -64,7 +70,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     provide: HTTP_INTERCEPTORS,
     useClass: CatchErrorInterceptor,
     multi: true,
-  }],
+  },
+  CardService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
