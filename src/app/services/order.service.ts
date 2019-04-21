@@ -32,14 +32,14 @@ export class OrderService {
   }
 
   getOrder(id: string): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
         catchError(this.handleError));
   }
   
   updateOrder(id: string, data): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.put(url, data, httpOptions).pipe(
       //might not need the map(this.extractData)
         //map(this.extractData),
@@ -47,7 +47,7 @@ export class OrderService {
   }
 
   postOrder(id: string, data): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.post(url, data, httpOptions).pipe(
           //might not need the map(this.extractData)
         //map(this.extractData),
