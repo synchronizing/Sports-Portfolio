@@ -29,12 +29,15 @@ import { FooterComponent } from './footer/footer.component';
 
 //Services & their Components
 import { CardService } from './services/card.service';
-//import { OrderService } from './services/order.service';
+import { OrderService } from './services/order.service';
 
 // Home View Components
 import { HomeComponent } from './home/home.component';
 import { SideFilterComponent } from './home/components/side-filter/side-filter.component';
 import { NavigatorComponent } from './home/components/navigator/navigator.component';
+
+// Order Component
+import { OrderComponent } from './order/order.component';
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -48,6 +51,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     NavigatorComponent,
     SideFilterComponent,
     FooterComponent,
+    OrderComponent,
   ],
   imports: [
     FormsModule,
@@ -71,7 +75,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     useClass: CatchErrorInterceptor,
     multi: true,
   },
-  CardService],
+  CardService,
+  OrderService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
