@@ -14,6 +14,7 @@
     </div>
 
     <div class="right menu">
+      
       <!--catalog-->
       <a class="item" [routerLink]="['/']">
         catalog
@@ -41,7 +42,7 @@
         <i class="dropdown icon"></i>
         <!--submenu-->
         <div class="menu" suiDropdownMenu>
-          <div class="item"> cart </div>
+          <div class="item" [routerLink]="['/order/:id']"> order </div>
           <div class="item"> settings </div>
           <div class="item" (click)=logout> logout</div>
         </div>
