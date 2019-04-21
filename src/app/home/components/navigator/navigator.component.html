@@ -1,31 +1,24 @@
 
 
-
-<div *ngIf="cards.length">
-  <div *ngFor='let card of cards'>
-    <div class="ui four doubling cards">
-        <div class="card">
-          <div class="image">
-            <img src="{{card.images.front}}">
-          </div>
-          <div class="content">
-            <div class="header">{{card.player.name}}</div>
-            <div class="meta">
-              <a>{{card.player.team}}</a>
-            </div>
-          </div>
-          <div class="extra content">
-            <span>
-              <i class="fas fa-{{card.player.sport}}-ball"></i>
-              {{card.card.year}} | {{card.card.set}}
-            </span>
-            <span class="right floated">
-              #{{card.player.setNumber}} of {{card.card.setAmount}}
-            </span>
-          </div>
+<div class="ui four doubling cards">
+    <div class="card" *ngFor='let card of cards | filter:searchText'>  
+      <div class="image">
+        <img src="{{card.images.front}}">
+      </div>
+      <div class="content">
+        <div class="header">{{card.player.name}}</div>
+        <div class="meta">
+          <a>{{card.player.team}}</a>
         </div>
+      </div>
+      <div class="extra content">
+        <span>
+          <i class="fas fa-{{card.player.sport}}-ball"></i>
+          {{card.card.year}} | {{card.card.set}}
+        </span>
+        <span class="right floated">
+          #{{card.player.setNumber}} of {{card.card.setAmount}}
+        </span>
+      </div>
     </div>
-  </div>
 </div>
-
-
