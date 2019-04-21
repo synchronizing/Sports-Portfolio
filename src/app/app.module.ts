@@ -36,6 +36,8 @@ import { HomeComponent } from './home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SideFilterComponent } from './home/components/side-filter/side-filter.component';
 import { NavigatorComponent } from './home/components/navigator/navigator.component';
+import { FilterPipe} from './home/components/filter.pipe';
+
 
 //Dependencies
 import {SuiModule} from 'ng2-semantic-ui';
@@ -45,6 +47,7 @@ import {SuiModule} from 'ng2-semantic-ui';
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    FilterPipe,
     AboutComponent,
     SideFilterComponent,
     NavigatorComponent,
