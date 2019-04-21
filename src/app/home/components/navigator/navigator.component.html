@@ -9,7 +9,7 @@
           <div class="content">
             <div class="header">{{card.player.name}}</div>
             <div class="meta">
-              <a>{{card.card.set}}</a>
+              <a>{{card.card.set}} #{{card.player.setNumber}} of {{card.card.setAmount}}</a>
             </div>
           </div>
           <div class="extra content">
@@ -18,7 +18,7 @@
               {{card.card.sport}} | {{card.card.year}}
             </span>
             <span class="right floated">
-              #{{card.player.setNumber}} of {{card.card.setAmount}}
+               {{card.card.condition}}
             </span>
           </div>
         </div>
