@@ -5,6 +5,7 @@ import { AuthGuard } from '../auth/auth-guard.service';
 // Home 
 import { HomeComponent } from '../home/home.component';
 import { NavigatorComponent } from '../home/components/navigator/navigator.component';
+import { OrderComponent } from '../order/order.component';
 
 import { AboutComponent } from '../about/about.component';
 
@@ -25,6 +26,11 @@ const routes: Routes = [{
   path: 'card',
   component: NavigatorComponent,
   data: { title: 'Card List' }
+},
+{
+  path: 'order/:id',
+  component: OrderComponent,
+  data: { title: 'Manage Order' }
 }
 ];
 
