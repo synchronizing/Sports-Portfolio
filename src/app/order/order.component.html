@@ -4,6 +4,23 @@
       <p>order component works! Here a user's order will be displayed. I think an easy way would be to make a table of the cards that a user has stored in their order.
         Then we can make a button next to cards to remove them from the order. And then we will need a button to send the order.
       </p>
+      <table class="table">
+          <thead>
+          <tr>
+            <th>Customer Id | </th>
+            <th>Order Price | </th>
+            <th>Order Created At</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let order of order">
+            <td>{{order.customerId}}</td>
+            <td>{{hero.price}}</td>
+            <td>{{hero.createdAt}}</td>
+          </tr>
+          </tbody>
+        </table>
+
   
     </sui-sidebar-sibling>
   </div>
