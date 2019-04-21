@@ -108,6 +108,7 @@ exports.sendMail = function (req, res) {
         res.status(400).send(err);
       } else {
         req.order = order;
+        res.json(req.order);
         next();
       }
     });
