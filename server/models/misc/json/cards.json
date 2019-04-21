@@ -2,117 +2,213 @@
     "cards": [
         {
             "card": {
-                "set": "Collectors Edge Rookie Rage - Key Kraze Holofoil",
+                "set": "Bowman",
                 "sport": "BASKETBALL",
-                "year": "1996",
+                "year": "2006-2007",
                 "condition": "Mint",
-                "setAmount": 25
+                "setAmount": 165
             },
             "player": {
-                "name": "Ray Allen",
-                "team": "Minnesota Timberwolves",
+                "name": "Tim Duncan",
+                "team": "San Antonio Spurs",
                 "league": "NBA",
-                "setNumber": 25
+                "setNumber": 20
             },
             "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/77692/77692-7078484Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/77692/77692-7078484Bk.jpg"
+                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/3147/3147-770805Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/3147/3147-770805Bk.jpg"
             }
         },
         {
             "card": {
-                "set": "Bazooka",
-                "sport": "BASEBALL",
-                "year": "2004",
+                "set": "NetPro",
+                "sport": "TENNIS",
+                "year": "2003",
                 "condition": "Mint",
-                "setAmount": 300
+                "setAmount": 100
             },
             "player": {
-                "name": "David Ortiz",
-                "team": "Boston Red Sox",
-                "league": "MLB",
-                "setNumber": 110
+                "name": "Roger Federer",
+                "team": "N/A",
+                "league": "N/A",
+                "setNumber": 90
             },
             "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Baseball/1730/1730-110Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Baseball/1730/1730-186281Bk.jpg"
+                "front": "https://www.tradingcarddb.com/Images/Cards/Tennis/70210/70210-90Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Tennis/70210/70210-90Bk.jpg"
+            }
+        },
+        {
+            "card": {
+                "set": "Fleer Showcase",
+                "sport": "HOCKEY",
+                "year": "2016-2017",
+                "condition": "Mint",
+                "setAmount": 207
+            },
+            "player": {
+                "name": "Sidney Crosby",
+                "team": "Pittsburgh Penguins",
+                "league": "NHL",
+                "setNumber": 1
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Hockey/143396/143396-9586072Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Hockey/143396/143396-9586072Bk.jpg"
             }  
         },
         {
             "card": {
-                "set": "Upper Deck Tiger Woods The Major",
-                "sport": "GOLF",
-                "year": "2002",
-                "condition": "Mint",
-                "setAmount": 32
-            },
-            "player": {
-                "name": "Tiger Woods",
-                "team": "N/A",
-                "league": "The Majors",
-                "setNumber": 1
-            },
-            "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Golf/68054/68054-4995305Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Golf/68054/68054-4995305Bk.jpg"
-            }
-        },
-        {
-            "card": {
-                "set": "Upper Deck - Kemp Slam Dunk Stars",
-                "sport": "BASKETBALL",
-                "year": "1994-1995",
-                "condition": "Fair",
-                "setAmount": 20
-            },
-            "player": {
-                "name": "Shawn Kemp",
-                "team": "Seattle Supersonics",
-                "league": "NBA",
-                "setNumber": 7
-            },
-            "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/2317/2317-3001482Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/2317/2317-3001482Bk.jpg"
-            }
-        },
-        {
-            "card": {
-                "set": "Bowman - Rookie Autographs",
+                "set": "Bowman",
                 "sport": "FOOTBALL",
-                "year": "1998",
-                "condition": "Mint",
-                "setAmount": 11
+                "year": "1999",
+                "condition": "Fair",
+                "setAmount": 220
             },
             "player": {
-                "name": "Randy Moss",
-                "team": "Minnesota Vikings",
+                "name": "John Elway",
+                "team": "Denver Broncos",
                 "league": "NFL",
-                "setNumber": 7
+                "setNumber": 50
             },
             "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Football/34563/34563-3604717Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Football/34563/34563-3604717Bk.jpg"
-            }
+                "front": "https://www.tradingcarddb.com/Images/Cards/Football/4274/4274-946340Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Football/4274/4274-946340Bk.jpg"
+            }  
         },
         {
             "card": {
-                "set": "Ringlords",
-                "sport": "BOXING",
-                "year": "1991",
-                "condition": "Mint",
-                "setAmount": 40
+                "set": "Circa",
+                "sport": "BASEBALL",
+                "year": "1996",
+                "condition": "Fair",
+                "setAmount": 200
             },
             "player": {
-                "name": "Mike Tyson",
-                "team": "N/A",
-                "league": "N/A",
+                "name": "Cal Ripken Jr.",
+                "team": "Baltimore Orioles",
+                "league": "MLB",
+                "setNumber": 8
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Baseball/644/644-8Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Baseball/644/644-8Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Hoops",
+                "sport": "BASKETBALL",
+                "year": "2011-2012",
+                "condition": "Mint",
+                "setAmount": 279
+            },
+            "player": {
+                "name": "Dirk Nowitzki",
+                "team": "Dallas Mavericks",
+                "league": "NBA",
+                "setNumber": 45
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/62089/62089-3903336Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/62089/62089-3903336Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Finest",
+                "sport": "BASKETBALL",
+                "year": "1998-1999",
+                "condition": "Mint",
+                "setAmount": 250
+            },
+            "player": {
+                "name": "Michael Jordan",
+                "team": "Chicago Bulls",
+                "league": "NBA",
+                "setNumber": 81
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/2758/2758-701210Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/2758/2758-701210Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Galasso Glossy Greats",
+                "sport": "BASEBALL",
+                "year": "1977-1984",
+                "condition": "Fair",
+                "setAmount": 270
+            },
+            "player": {
+                "name": "Babe Ruth",
+                "team": "Boston Red Sox",
+                "league": "MLB",
+                "setNumber": 165
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Baseball/64039/64039-4228955Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Baseball/64039/64039-4228955Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Bowman's Best",
+                "sport": "BASKETBALL",
+                "year": "2000-2001",
+                "condition": "Mint",
+                "setAmount": 133
+            },
+            "player": {
+                "name": "Allen Iverson",
+                "team": "Philadelphia 76ers",
+                "league": "NBA",
                 "setNumber": 1
             },
             "images": {
-                "front": "https://www.tradingcarddb.com/Images/Cards/Boxing/64066/64066-4229547Fr.jpg",
-                "back": "https://www.tradingcarddb.com/Images/Cards/Boxing/64066/64066-4229547Bk.jpg"
-            }
+                "front": "https://www.tradingcarddb.com/Images/Cards/Basketball/2892/2892-718369Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Basketball/2892/2892-718369Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Bazooka",
+                "sport": "FOOTBALL",
+                "year": "2005",
+                "condition": "Fair",
+                "setAmount": 220
+            },
+            "player": {
+                "name": "Tom Brady",
+                "team": "New England Patriots",
+                "league": "NFL",
+                "setNumber": 12
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Football/4694/4694-1036087Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Football/4694/4694-1036087Bk.jpg"
+            }  
+        },
+        {
+            "card": {
+                "set": "Donruss Classics",
+                "sport": "FOOTBALL",
+                "year": "2007",
+                "condition": "Mint",
+                "setAmount": 271
+            },
+            "player": {
+                "name": "Brian Urlacher",
+                "team": "Chicago Bears",
+                "league": "NFL",
+                "setNumber": 17
+            },
+            "images": {
+                "front": "https://www.tradingcarddb.com/Images/Cards/Football/4779/4779-1061215Fr.jpg",
+                "back": "https://www.tradingcarddb.com/Images/Cards/Football/4779/4779-1061215Bk.jpg"
+            }  
         }
+        
     ]
 }
