@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../../services/card.service';
-import { CardInterface } from '../../../models/Card'
+//import { CardInterface } from '../../../models/Card'
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class NavigatorComponent implements OnInit {
   
-  card: any;
+  cards: any;
 
 
   constructor(private cardServ: CardService) { }
@@ -20,7 +20,7 @@ export class NavigatorComponent implements OnInit {
     this.cardServ.getAllCards()
       .subscribe(res => {
         console.log(res);
-        this.card = res;
+        this.cards = res;
       }, err => {
         console.log(err);
       });
