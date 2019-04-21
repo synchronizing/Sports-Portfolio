@@ -99,10 +99,10 @@ exports.sendMail = function (req, res) {
     });
 }
 
-  /* retrieve a order by its particular id */
+  /* retrieve a order by its particular CUSTOMER's id */
   exports.orderById = function(req, res, next, id) {
 
-    Order.findById(id).exec(function(err, order) {
+    Order.find({customerId: id}).exec(function(err, order) {
       if(err) {
         console.log(err);
         res.status(400).send(err);
@@ -112,6 +112,9 @@ exports.sendMail = function (req, res) {
       }
     });
   };
+
+  
+
 
 
 
