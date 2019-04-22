@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   @Input() user: any = {};
 
   cards: any;
+  cart: any;
+  showCart: boolean;
 
   constructor(private cardServ: CardService) { }
 
@@ -27,6 +29,18 @@ export class HomeComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+    this.showCart = false;
+    this.cart = [];
+  }
+
+  // Toggle between catalogue or cart view
+  toggleCart(){
+    this.showCart = !this.showCart;
+  }
+
+  // Move a card from catalogue to cart
+  toCart(card){
+    this.cart.push(card);
   }
 
 }

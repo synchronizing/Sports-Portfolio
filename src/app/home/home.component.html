@@ -1,6 +1,15 @@
+
+<!--FOR TESTING PURPOSES-->
+<div class="ui item">
+  <span class="text"> 
+    <button (click)="toggleCart()" > show cart </button>
+  </span>
+</div>
+<!--FOR TESTING PURPOSES-->
+
 <sui-sidebar-container class="bottom segment main">
   <div class="ui grid">
-    <div class="one wide column sidebar">
+    <div class="one wide column massive sidebar">
       <sui-sidebar class="vertical visible " [isVisible]="true" #sidebar>
         <!--search-->
         <div class="ui item input">
@@ -59,9 +68,11 @@
     </div>
     <div class="eleven wide column">
       <sui-sidebar-sibling class="ui container pad">
-        <!--<app-navigator></app-navigator>-->
         <div class="ui four doubling cards">
-            <div class="card" *ngFor='let card of cards | filter:searchText'>  
+            <div class="card" 
+                 *ngFor='let card of (showCart? cart : cards) | filter:searchText'
+                 (click)="toCart(card)"
+              >  
               <div class="image">
                 <img src="{{card.images.front}}">
               </div>
