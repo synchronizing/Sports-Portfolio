@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SideFilterComponent } from './side-filter.component';
 
-describe('HeaderComponent', () => {
+describe('SideFilterComponent', () => {
   let component: SideFilterComponent;
   let fixture: ComponentFixture<SideFilterComponent>;
 
