@@ -2,13 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SideFilterComponent } from './side-filter.component';
 
-describe('SideFilterComponent', () => {
+describe('HeaderComponent', () => {
   let component: SideFilterComponent;
   let fixture: ComponentFixture<SideFilterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [  ]
+      declarations: [ SideFilterComponent ]
     })
     .compileComponents();
   }));
