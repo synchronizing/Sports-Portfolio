@@ -59,9 +59,8 @@
     </div>
     <div class="eleven wide column">
       <sui-sidebar-sibling class="ui container pad">
-        <!--<app-navigator></app-navigator>-->
         <div class="ui four doubling cards">
-            <div class="card" *ngFor='let card of cards | filter:searchText'>  
+            <div class="card" *ngFor='let card of cards | CardFilter:searchText'>  
               <div class="image">
                 <img src="{{card.images.front}}">
               </div>
