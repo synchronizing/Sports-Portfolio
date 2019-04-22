@@ -1,5 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -19,11 +20,12 @@ export class AuthService {
         email,
         password
       }).subscribe((data : any) => {
+          alert("subbing!!!");
           observer.next({user: data.user});
           this.setUser(data.user);
           this.token.saveToken(data.token);
           observer.complete();
-      })
+      }, err => alert("Invalid login, try again!"))
     });
   }
 
@@ -39,7 +41,7 @@ export class AuthService {
         this.setUser(data.user);
         this.token.saveToken(data.token);
         observer.complete();
-      })
+      }, err => alert("Couldn't register, try again!"))
     });
   }
 
