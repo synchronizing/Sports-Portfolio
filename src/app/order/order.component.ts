@@ -3,7 +3,6 @@ import { OrderService } from '../services/order.service';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -25,8 +24,16 @@ export class OrderComponent implements OnInit {
     //this.authServ.$userSource.asObservable();
     //this.customerId = $userSource._id;
     //Here is where we need to get the user._id;
-    this.user = this.authServ.me();
+    this.authServ.getUser().subscribe(res => {
+      console.log(res);
+      this.user = res;
+    }, err => {
+      console.log(err);
+    });
+  
+
     console.log(this.user._id);
+
     this.orderServ.getOrder(this.user._id)
       .subscribe(res => {
         console.log(res);

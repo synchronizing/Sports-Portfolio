@@ -49,6 +49,7 @@ export class AuthService {
     (<any>window).user = user;
   }
 
+
   getUser(): Observable<any> {
     return this.$userSource.asObservable();
   }
