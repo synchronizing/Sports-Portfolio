@@ -18,9 +18,7 @@ export class CardFilter implements PipeTransform {
 
       // Returns true if any of objs values matches regex
       const valuesContain = (obj) =>
-        obj
-          // Extract values in an array
-          .values() 
+        Object.values(obj)
           // Only focusing on strings
           .filter(v => (typeof v === "string"))
           // findIndex returns -1 if not found
