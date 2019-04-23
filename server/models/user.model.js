@@ -37,11 +37,9 @@ UserSchema.post('save', function(next) {
     if(err) console.log(err);
     else console.log('An order was created for the user too!');
   });
-
+  let currentTime = new Date();
   this.updatedAt = currentTime;
   //when a new user is created, a new order is also created for the user.
-
-  next();
 });
 
 

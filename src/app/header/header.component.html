@@ -12,7 +12,7 @@
     <div class="right menu">
       <!--catalog-->
       <a class="item" [routerLink]="['/']">
-        catalog
+        home
       </a>
 
       <!--about-->
@@ -32,16 +32,7 @@
 
     <!--else account_dropdown-->
     <ng-template #account>
-      <div class="ui dropdown item" suiDropdown>
-        <span class="text"> my account </span>
-        <i class="dropdown icon"></i>
-        <!--submenu-->
-        <div class="menu" suiDropdownMenu>
-          <div class="item"> cart </div>
-          <div class="item"> settings </div>
-          <div class="item" (click)="logout()"> logout</div>
-        </div>
-      </div>
+      <div class="item" (click)="logout()"> logout</div>
     </ng-template>
 
   </div>
