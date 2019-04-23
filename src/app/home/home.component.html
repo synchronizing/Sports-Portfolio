@@ -20,7 +20,7 @@
     <br>
 
     <div class="ui four doubling cards">
-      <div class="card" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
+      <div class="card zoom" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
 
         <div class="image">
           <img src="{{card.images.front}}">
