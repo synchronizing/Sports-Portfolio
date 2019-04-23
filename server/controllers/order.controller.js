@@ -18,7 +18,7 @@ var transporter = nodemailer.createTransport({
 
 function prettify(cardarray) {
     let cardno = 1;
-    let bigstring = "";
+    let bigstring = "New request from test@test.com\n\n";
     for (let card of cardarray) {
         bigstring += "\n#######\nCard Number: " + cardno + "\n"
         let cardpart = card['card'];
@@ -44,12 +44,11 @@ exports.create = function (req, res) {
     /* Instantiate an Order */
     /* Then save the Order */
     
-    var myText = req.user.id + ' That was easy!';
     var mailOptions = {
         from: 'teamsportics@gmail.com',
         to: 'imnoahcook@gmail.com',
         subject: 'New Order',
-        text: x
+        text: x  
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {

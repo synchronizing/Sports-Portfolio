@@ -41,9 +41,10 @@ export class OrderService {
   
 
   postOrder(data): Observable<any> {
+    alert("Order has been sent");
     return this.http.post(apiUrl, data, httpOptions).pipe(
           //might not need the map(this.extractData)
-        //map(this.extractData),
+        map(this.extractData),
         catchError(this.handleError));
   }
   
