@@ -56,11 +56,11 @@ final = {
 #okay now that I've read the file in and i have it as an object in final
 
 client = MongoClient('mongodb://localhost:27017')
-db = client.csv_stuff
+db = client.mean
 
-posts = db.posts
-posts.drop()
-z = posts.insert_many(cards)
+cardz = db.cards
+cardz.drop()
+z = cardz.insert_many(cards)
 
 
 
