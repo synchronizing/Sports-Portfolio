@@ -20,7 +20,7 @@
     <br>
 
     <div class="ui four doubling cards">
-      <div class="card" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
+      <div class="card zoom" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
 
         <div class="image">
           <img src="{{card.images.front}}">
@@ -28,19 +28,29 @@
 
         <div class="content">
           <div class="header">{{card.player.name}}</div>
-          <div class="meta">
+
+          <div class="meta left floated">
             <a>{{card.player.team}}</a>
+          </div>
+
+          <div class="meta right floated">
+            {{card.card.year}}
           </div>
         </div>
 
         <div class="extra content">
-          <span>
-              <i class="fas fa-{{card.player.sport}}-ball"></i>
-              {{card.card.year}} | {{card.card.set}}
-            </span>
+          <div class="center aligned">
+            {{card.card.set}}
+          </div>
+        </div>
+
+        <div class="extra content">
+          <span class="left floated">
+                {{card.card.condition}}
+          </span>
           <span class="right floated">
-              #{{card.player.setNumber}} of {{card.card.setAmount}}
-        </span>
+                #{{card.player.setNumber}} of {{card.card.setAmount}}
+          </span>
         </div>
 
         <div class="ui bottom attached button" *ngIf='!showCart' (click)="toCart(card)">
