@@ -1,15 +1,19 @@
 .main {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .pad {
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 75px;
-  position: auto;
 }
 
 .sidebar {
   margin: 10px;
-  position: absolute;
+  position: sticky;
+}
+
+.input {
+    width: 50%;
 }

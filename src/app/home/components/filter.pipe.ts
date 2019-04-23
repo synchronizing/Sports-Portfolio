@@ -6,10 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CardFilter implements PipeTransform {
   transform(cards: any[], searchText: string): any[] {
 
-    if(!cards) 
+    if(!cards)
       return [];
 
-    else if(!searchText) 
+    else if(!searchText)
       return cards;
 
     else {
@@ -24,7 +24,7 @@ export class CardFilter implements PipeTransform {
           // findIndex returns -1 if not found
           .findIndex(s => rgx.test(String(s))) != -1;
 
-      return cards.filter(( card ) => 
+      return cards.filter(( card ) =>
         valuesContain(card.player) || valuesContain(card.card));
 
     }
