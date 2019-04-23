@@ -29,7 +29,7 @@ import { FooterComponent } from './footer/footer.component';
 
 //Services & their Components
 import { CardService } from './services/card.service';
-//import { OrderService } from './services/order.service';
+import { OrderService } from './services/order.service';
 
 // Home View Components
 import { HomeComponent } from './home/home.component';
@@ -76,7 +76,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     useClass: CatchErrorInterceptor,
     multi: true,
   },
-  CardService],
+  CardService,
+  OrderService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
