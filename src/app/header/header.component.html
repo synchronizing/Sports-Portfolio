@@ -3,10 +3,6 @@
   <!--navbar-->
   <div class="ui massive top attached stackable menu primaryColor">
 
-    <a class="item" (click)="sidebar.toggle()">
-        <i class="sidebar icon"></i> Menu
-    </a>
-
     <!--site logo routes to home-->
     <div class="header item">
       <!-- <img [routerLink]="['/']" src="../../assets/logo.png"> -->
@@ -43,7 +39,7 @@
         <div class="menu" suiDropdownMenu>
           <div class="item"> cart </div>
           <div class="item"> settings </div>
-          <div class="item" (click)=logout> logout</div>
+          <div class="item" (click)="logout()"> logout</div>
         </div>
       </div>
     </ng-template>

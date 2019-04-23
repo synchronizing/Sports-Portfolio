@@ -1,87 +1,58 @@
-<sui-sidebar-container class="bottom segment main">
-  <div class="ui grid">
-    <div class="one wide column sidebar">
-      <sui-sidebar class="vertical visible " [isVisible]="true" #sidebar>
-        <!--search-->
-        <div class="ui item input">
-          <input class="form-control" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search for your card.. ">
-        </div>
-        <!--sports-->
-        <div class="item">
-          <sui-accordion>
-            <sui-accordion-panel>
-              <div title>
-                Sports
-                <i class="dropdown icon"></i>
-              </div>
-              <div content class="ui fluid form">
-                <div class="field"> Hockey </div>
-                <div class="field"> Basketball </div>
-                <div class="field"> Baseball </div>
-                <div class="field"> Football </div>
-              </div>
-            </sui-accordion-panel>
-          </sui-accordion>
-        </div>
-        <!--year-->
-        <div class="item">
-          <sui-accordion>
-            <sui-accordion-panel>
-              <div title>
-                Year
-                <i class="dropdown icon"></i>
-              </div>
-              <div content class="ui fluid form">
-                <div class="field"> 1990</div>
-                <div class="field"> 1991</div>
-                <div class="field"> 1992</div>
-                <div class="field"> 1993</div>
-              </div>
-            </sui-accordion-panel>
-          </sui-accordion>
-        </div>
-        <!--edition-->
-        <div class="item">
-          <sui-accordion>
-            <sui-accordion-panel>
-              <div title>
-                Edition
-                <i class="dropdown icon"></i>
-              </div>
-              <div content class="ui fluid form">
-                <div class="field"> Hall of Fame </div>
-                <div class="field"> Rookie </div>
-              </div>
-            </sui-accordion-panel>
-          </sui-accordion>
-        </div>
-      </sui-sidebar>
+<div class="main">
+  <div class="ui container pad">
+    <div class="ui top attached menu">
+
+      <div class="ui item input">
+        <input class="form-control input-md" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search query for player name, year, team, league. ">
+      </div>
+
+      <div class="right menu">
+        <a class="launch icon item" (click)="toggleCart()">
+          <span><i (click)="toggleCart()" class="fas fa-shopping-basket"></i> Show {{ view }} </span>
+        </a>
+
+        <a class="launch icon item">
+          <span><i class="fas fa-store-alt"></i> Send Quota </span>
+        </a>
+      </div>
     </div>
-    <div class="eleven wide column">
-      <sui-sidebar-sibling class="ui container pad">
-        <div class="ui four doubling cards">
-            <div class="card" *ngFor='let card of cards | CardFilter:searchText'>  
-              <div class="image">
-                <img src="{{card.images.front}}">
-              </div>
-              <div class="content">
-                <div class="header">{{card.player.name}}</div>
-                <div class="meta">
-                  <a>{{card.player.team}}</a>
-                </div>
-              </div>
-              <div class="extra content">
-                <span>
-                  <i class="fas fa-{{card.player.sport}}-ball"></i>
-                  {{card.card.year}} | {{card.card.set}}
-                </span>
-                <span class="right floated">
-                  #{{card.player.setNumber}} of {{card.card.setAmount}}
-                </span>
-              </div>
-            </div>
+
+    <br>
+
+    <div class="ui four doubling cards">
+      <div class="card" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
+
+        <div class="image">
+          <img src="{{card.images.front}}">
         </div>
-      </sui-sidebar-sibling>
+
+        <div class="content">
+          <div class="header">{{card.player.name}}</div>
+          <div class="meta">
+            <a>{{card.player.team}}</a>
+          </div>
+        </div>
+
+        <div class="extra content">
+          <span>
+              <i class="fas fa-{{card.player.sport}}-ball"></i>
+              {{card.card.year}} | {{card.card.set}}
+            </span>
+          <span class="right floated">
+              #{{card.player.setNumber}} of {{card.card.setAmount}}
+        </span>
+        </div>
+
+        <div class="ui bottom attached button" *ngIf='!showCart' (click)="toCart(card)">
+          <i class="add icon"></i>
+          Add to Cart
+        </div>
+
+        <div class="ui bottom attached button" *ngIf='showCart' (click)="removeFromCart(card)">
+          <i class="minus icon"></i>
+          Remove from Cart
+        </div>
+
+      </div>
     </div>
   </div>
-</sui-sidebar-container>

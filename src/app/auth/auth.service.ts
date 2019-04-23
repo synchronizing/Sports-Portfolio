@@ -20,7 +20,6 @@ export class AuthService {
         email,
         password
       }).subscribe((data : any) => {
-          alert("subbing!!!");
           observer.next({user: data.user});
           this.setUser(data.user);
           this.token.saveToken(data.token);
