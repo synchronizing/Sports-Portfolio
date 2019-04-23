@@ -4,12 +4,12 @@ var orders = require('../controllers/order.controller.js'),
     router = express.Router();
 
 router.route('/')
-    .post(orders.create);
+    .post(orders.update);
 
 router.route('/:id')
-  .get(orders.read)
-  .put(orders.update)
-  .post(orders.sendMail);
+  .get(orders.orderById);
+  //.put(orders.update)
+  //.post(orders.sendMail);
 
 
 
