@@ -1,0 +1,62 @@
+{
+    "set": {
+        "0": "Bowman",
+        "1": "NetPro"
+    },
+    "sport": {
+        "0": "BASKETBALL",
+        "1": "TENNIS"
+    },
+    "year": {
+        "0": "2006-2007",
+        "1": "2003"
+    },
+    "condition": {
+        "0": "Mint",
+        "1": "Mint"
+    },
+    "setAmount": {
+        "0": 165,
+        "1": 100
+    },
+    "name": {
+        "0": "Tim Duncan",
+        "1": "Roger Federer"
+    },
+    "team": {
+        "0": "San Antonio Spurs",
+        "1": null
+    },
+    "league": {
+        "0": "NBA",
+        "1": null
+    },
+    "setNumber": {
+        "0": 20,
+        "1": 90
+    },
+    "front": {
+        "0": "https:\/\/www.tradingcarddb.com\/Images\/Cards\/Basketball\/3147\/3147-770805Fr.jpg",
+        "1": "https:\/\/www.tradingcarddb.com\/Images\/Cards\/Tennis\/70210\/70210-90Fr.jpg"
+    },
+    "back": {
+        "0": "https:\/\/www.tradingcarddb.com\/Images\/Cards\/Basketball\/3147\/3147-770805Bk.jpg",
+        "1": "https:\/\/www.tradingcarddb.com\/Images\/Cards\/Tennis\/70210\/70210-90Bk.jpg"
+    },
+    "other": {
+        "0": null,
+        "1": null
+    },
+    "bought": {
+        "0": null,
+        "1": null
+    },
+    "createdAt": {
+        "0": null,
+        "1": null
+    },
+    "updatedAt": {
+        "0": null,
+        "1": null
+    }
+}
