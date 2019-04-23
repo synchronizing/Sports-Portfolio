@@ -46,7 +46,7 @@ exports.create = function (req, res) {
     
     var mailOptions = {
         from: 'teamsportics@gmail.com',
-        to: 'imnoahcook@gmail.com',
+        to: 'felipefaria@me.com',
         subject: 'New Order',
         text: x  
     };
