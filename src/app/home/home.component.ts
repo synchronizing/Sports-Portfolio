@@ -69,6 +69,7 @@ export class HomeComponent implements OnInit {
         break;
       }
   }
+  
   sendOrder() {
     this.orderServ.postOrder(this.cart)
       .subscribe(()=> {
