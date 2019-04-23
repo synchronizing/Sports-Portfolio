@@ -1,3 +1,4 @@
+<div class="main">
 <div class="ui container pad">
   <div class="ui top attached menu">
 
@@ -7,9 +8,8 @@
 
     <div class="right menu">
       <a class="launch icon item" (click)="toggleCart()">
-        <span><i class="fas fa-shopping-basket"></i> View Cart </span>
+        <span><i (click)="toggleCart()" class="fas fa-shopping-basket"></i> Show {{ view }} </span>
       </a>
-
 
       <a class="launch icon item">
         <span><i class="fas fa-store-alt"></i> Send Quota </span>
@@ -20,7 +20,7 @@
   <br>
 
   <div class="ui four doubling cards">
-    <div class="card" *ngFor='let card of cards | CardFilter:searchText'>
+    <div class="card" *ngFor='let card of (showCart? cart : cards) | filter:searchText' (click)="toCart(card)">
       <div class="image">
         <img src="{{card.images.front}}">
       </div>
@@ -37,7 +37,11 @@
             </span>
         <span class="right floated">
               #{{card.player.setNumber}} of {{card.card.setAmount}}
-            </span>
+        </span>
+      </div>
+
+      <div class="extra content">
+          Add to Cart
       </div>
     </div>
   </div>

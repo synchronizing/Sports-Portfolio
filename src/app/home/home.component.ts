@@ -12,10 +12,12 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   searchText;
-  
+
   @Input() user: any = {};
 
   cards: any;
+  cart: any;
+  showCart: boolean;
 
   constructor(private cardServ: CardService) { }
 
@@ -27,6 +29,24 @@ export class HomeComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+    this.view = "Cart";
+    this.showCart = false;
+    this.cart = [];
+  }
+
+  // Toggle between catalogue or cart view
+  toggleCart(){
+    if(this.showCart){
+        this.view = "Cart";
+    } else {
+        this.view = "Rick's Cards"
+    }
+    this.showCart = !this.showCart;
+  }
+
+  // Move a card from catalogue to cart
+  toCart(card){
+    this.cart.push(card);
   }
 
 }
