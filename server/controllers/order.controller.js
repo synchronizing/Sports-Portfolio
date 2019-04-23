@@ -57,26 +57,7 @@ exports.update = function (req, res) {
         subject: 'Sending Email using Node.js',
         text: myText
     };
-    /*
-    Order.findById({ _id: req.params.id }, function (err, order) {
-        // Return 404 if order not found:
-        if (err) res.status(404).send(err);
 
-        // Only update attributes submitted, don't null anything out:
-        if (req.body.customerId) order.customerId = req.body.customerId;
-        if (req.body.cardIds) order.cardIds = req.body.cardIds;
-        if (req.body.price) order.price = req.body.price;
-        if (req.body.confirmed) order.confirmed = req.body.confirmed;
-
-        order.save(function (err) {
-            // return 500 if there's an error:
-            if (err) res.status(500).send(err);
-
-            // otherwise send order json back with 200 success header:
-            res.status(200).send(order);
-        });
-    });
-    */
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
