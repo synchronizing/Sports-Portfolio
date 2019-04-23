@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   cart: any;
   showCart: boolean;
   searchText: string;
+  view: string;
 
 
   constructor(private cardServ: CardService) {}
