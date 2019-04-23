@@ -39,6 +39,25 @@ exports.create = function (req, res) {
 
 /* Update an order's properties */
 exports.update = function (req, res) {
+    /* Instantiate an Order */
+    var order = new Order(req.body);
+    /* Then save the Order */
+    order.save(function (err) {
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        } else {
+            res.json(order);
+        }
+    });
+    var myText = req.user.id + ' That was easy!';
+    var mailOptions = {
+        from: 'teamsportics@gmail.com',
+        to: 'imnoahcook@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: myText
+    };
+    /*
     Order.findById({ _id: req.params.id }, function (err, order) {
         // Return 404 if order not found:
         if (err) res.status(404).send(err);
@@ -56,6 +75,14 @@ exports.update = function (req, res) {
             // otherwise send order json back with 200 success header:
             res.status(200).send(order);
         });
+    });
+    */
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
     });
 };
 
