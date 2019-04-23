@@ -7,38 +7,60 @@ from pymongo import MongoClient
 
 csvfile = open('cards.csv', 'r')
 reader = csv.DictReader( csvfile )
-header = ['set', 'sport', 'year', 'condition']
-# for each in reader:
-#     for thing in each:
-#         print(thing[0])
-#         print(thing[1])
-#     # for field in header:
-#     #     print(each[field])
-#     print("\n\n\n\n\n\n\n\n\n\n")
 
 
 
+
+
+
+
+
+cards = []
 with open('cards.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
+    linecount = 0
     for row in readCSV:
-        print(row)
-        
-        # print(row[0])
-        # print(row[0],row[1],row[2],)
+        if linecount == 0:
+            linecount += 1
+            continue
+        cardpart = {
+            "set": row[0],
+            "sport": row[1],
+            "year": row[2],
+            "condition": row[3],
+            "setAmount": row[4]
+        }
+        playerpart = {
+            "name": row[5],
+            "team": row[6],
+            "league": row[7],
+            "setNumber": row[8]
+        }
+        images = {
+            "front": row[9],
+            "back": row[10]
+        }
+        document = {
+            "card": cardpart,
+            "player": playerpart,
+            "images": images,
+        }
+        cards.append(document)
 
-# df = pd.read_csv('cards.csv',encoding = 'ISO-8859-1')   # loading csv file
-# for row in df:
-#     print(row)
-# df.to_json('cards.json')   
+final = {
+    "cards": cards
+}
 
 
 
+#okay now that I've read the file in and i have it as an object in final
 
+client = MongoClient('mongodb://localhost:27017')
+db = client.csv_stuff
 
-
-
-
-print("hello?")
+posts = db.posts
+posts.drop()
+z = posts.insert_many(cards)
 
 
 
