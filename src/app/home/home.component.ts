@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { CardService } from "../services/card.service";
 import { DataSource } from "@angular/cdk/collections";
 import { Observable } from "rxjs";
+import { OrderService } from "../services/order.service";
 
 import { AuthService } from '../auth/auth.service';
 
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   view: string;
 
 
-  constructor(private cardServ: CardService) {}
+  constructor(private cardServ: CardService, private orderServ: OrderService) {}
 
   ngOnInit() {
     this.cardServ.getAllCards().subscribe(
@@ -67,5 +68,12 @@ export class HomeComponent implements OnInit {
         this.cart.splice(i, 1);
         break;
       }
+  }
+  
+  sendOrder() {
+    this.orderServ.postOrder(this.cart)
+      .subscribe(()=> {
+        console.log('done');
+      });
   }
 }

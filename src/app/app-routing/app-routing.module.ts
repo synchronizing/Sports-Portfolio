@@ -25,6 +25,11 @@ const routes: Routes = [{
   path: 'card',
   component: NavigatorComponent,
   data: { title: 'Card List' }
+},
+{
+  path: 'order',
+  component: HomeComponent,
+  data: { title: 'Send Order'}
 }
 ];
 
