@@ -1,43 +1,58 @@
-<div class="ui container pad">
-  <div class="ui top attached menu">
+<div class="main">
+  <div class="ui container pad">
+    <div class="ui top attached menu">
 
-    <div class="ui item input">
-      <input class="form-control input-md" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search query for player name, year, team, league. ">
-    </div>
-
-    <div class="right menu">
-      <a class="launch icon item">
-        <span><i class="fas fa-shopping-basket"></i> View Cart </span>
-      </a>
-
-      <a class="launch icon item">
-        <span><i class="fas fa-store-alt"></i> Send Quota </span>
-      </a>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="ui four doubling cards">
-    <div class="card" *ngFor='let card of cards | CardFilter:searchText'>
-      <div class="image">
-        <img src="{{card.images.front}}">
+      <div class="ui item input">
+        <input class="form-control input-md" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search query for player name, year, team, league. ">
       </div>
-      <div class="content">
-        <div class="header">{{card.player.name}}</div>
-        <div class="meta">
-          <a>{{card.player.team}}</a>
+
+      <div class="right menu">
+        <a class="launch icon item" (click)="toggleCart()">
+          <span><i (click)="toggleCart()" class="fas fa-shopping-basket"></i> Show {{ view }} </span>
+        </a>
+
+        <a class="launch icon item">
+          <span><i class="fas fa-store-alt"></i> Send Quota </span>
+        </a>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="ui four doubling cards">
+      <div class="card" *ngFor='let card of (showCart? cart : cards) | CardFilter:searchText'>
+
+        <div class="image">
+          <img src="{{card.images.front}}">
         </div>
-      </div>
-      <div class="extra content">
-        <span>
+
+        <div class="content">
+          <div class="header">{{card.player.name}}</div>
+          <div class="meta">
+            <a>{{card.player.team}}</a>
+          </div>
+        </div>
+
+        <div class="extra content">
+          <span>
               <i class="fas fa-{{card.player.sport}}-ball"></i>
               {{card.card.year}} | {{card.card.set}}
             </span>
-        <span class="right floated">
+          <span class="right floated">
               #{{card.player.setNumber}} of {{card.card.setAmount}}
-            </span>
+        </span>
+        </div>
+
+        <div class="ui bottom attached button" *ngIf='!showCart' (click)="toCart(card)">
+          <i class="add icon"></i>
+          Add to Cart
+        </div>
+
+        <div class="ui bottom attached button" *ngIf='showCart' (click)="removeFromCart(card)">
+          <i class="minus icon"></i>
+          Remove from Cart
+        </div>
+
       </div>
     </div>
   </div>
-</div>
