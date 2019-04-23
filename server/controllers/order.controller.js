@@ -13,113 +13,72 @@ var transporter = nodemailer.createTransport({
 });
 /* Methods:
     .create -- creates an order
-    .update -- update an existing order with new information.
-    .addCard -- add a card to a user's order.
-    .delete -- remove a card from a user's order.
-    .read -- show an order
-
-
+    .orderById -- show an order
 */
 
-/* Create an Order */
-/* Order's Need to be created when a user account is created? */
-exports.create = function (req, res) {
-    /* Instantiate an Order */
-    var order = new Order(req.body);
-    /* Then save the Order */
-    order.save(function (err) {
-        if (err) {
-            console.log(err);
-            res.status(400).send(err);
-        } else {
-            res.json(order);
+function prettify(cardarray) {
+    let cardno = 1;
+    let bigstring = "";
+    for (let card of cardarray) {
+        bigstring += "\n#######\nCard Number: " + cardno + "\n"
+        let cardpart = card['card'];
+        for(let entry of Object.entries(cardpart))
+        {
+            bigstring += entry[0] + ":  "+ entry[1] + "\n";
         }
-    });
-};
-
-/* Update an order's properties */
-exports.update = function (req, res) {
-    /* Instantiate an Order */
-    var order = new Order(req.body);
-    /* Then save the Order */
-    order.save(function (err) {
-        if (err) {
-            console.log(err);
-            res.status(400).send(err);
-        } else {
-            res.json(order);
+        bigstring += "\nPlayer info:\n";
+        for(let entry of Object.entries(card['player']))
+        {
+            bigstring += entry[0] + ":  "+ entry[1] + "\n";            
         }
-    });
-    var myText = req.user.id + ' That was easy!';
-    var mailOptions = {
-        from: 'teamsportics@gmail.com',
-        to: 'imnoahcook@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: myText
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
-};
-
-
-/* Delete an order */
-exports.delete = function (req, res) {
-    var order = req.order;
-    /* Remove the order */
-    order.remove({ _id: req.params.id }, function (err) {
-        if (err) {
-            console.log(err);
-            res.status(400).send(err);
-        }
-        //res.json(req.order);
-        res.status(200).send({ message: "Order Deleted Successfully" });
-    });
-};
-
-/* Show the order */
-exports.read = function (req, res) {
-    /* send back the card as json from the request */
-    res.json(req.order);
-};
-
-
-exports.sendMail = function (req, res) {
-    var myText = req.user.id + ' That was easy!';
-    var mailOptions = {
-        from: 'teamsportics@gmail.com',
-        to: 'imnoahcook@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: myText
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
+        cardno++;
+    }
+    return bigstring;
 }
 
-  /* retrieve a order by its particular id */
-  exports.orderById = function(req, res, next, id) {
 
-    Order.findById(id).exec(function(err, order) {
+
+/* Update an order's properties */
+exports.create = function (req, res) {
+    var x = prettify(req.body);
+    /* Instantiate an Order */
+    /* Then save the Order */
+    
+    var myText = req.user.id + ' That was easy!';
+    var mailOptions = {
+        from: 'teamsportics@gmail.com',
+        to: 'imnoahcook@gmail.com',
+        subject: 'New Order',
+        text: x
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+};
+
+
+
+
+
+  /* retrieve a order by its particular id */
+  exports.orderById = function(req, res, next, orderId) {
+
+    Order.findById(orderId).exec(function(err, order) {
       if(err) {
         console.log(err);
         res.status(400).send(err);
       } else {
-        req.order = order;
-        next();
+        //req.order = order;
+        res.json(req.order);
+        //next();
       }
     });
   };
+
 
 
 

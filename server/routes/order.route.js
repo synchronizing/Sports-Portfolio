@@ -4,7 +4,7 @@ var orders = require('../controllers/order.controller.js'),
     router = express.Router();
 
 router.route('/')
-    .post(orders.update);
+    .post(orders.create);
 
 router.route('/:id')
   .get(orders.orderById);

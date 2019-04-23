@@ -69,11 +69,10 @@ export class HomeComponent implements OnInit {
         break;
       }
   }
-  sendOrder(data) {
-    this.orderServ.postOrder(data)
-      .subscribe(data=> {
-        console.log(data);
-        this.order = data;
+  sendOrder() {
+    this.orderServ.postOrder(this.cart)
+      .subscribe(()=> {
+        console.log('done');
       });
   }
 }
