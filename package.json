@@ -5,8 +5,7 @@
   "scripts": {
     "ng": "ng",
     "serve": "node server",
-    //"start": "concurrently \"yellow.bold,green.bold\" -n \"SERVER,BUILD\" \"nodemon server\" \"ng build --watch\"",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "concurrently \"nodemon server\" \"ng build --watch\" ",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
