@@ -34,8 +34,6 @@ import { OrderService } from './services/order.service';
 // Home View Components
 import { HomeComponent } from './home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { SideFilterComponent } from './home/components/side-filter/side-filter.component';
-import { NavigatorComponent } from './home/components/navigator/navigator.component';
 import { CardFilter } from './home/components/filter.pipe';
 
 
@@ -49,8 +47,6 @@ import {SuiModule} from 'ng2-semantic-ui';
     HomeComponent,
     CardFilter,
     AboutComponent,
-    SideFilterComponent,
-    NavigatorComponent,
     FooterComponent,
   ],
   imports: [

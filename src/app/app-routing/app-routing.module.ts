@@ -4,7 +4,6 @@ import { AuthGuard } from '../auth/auth-guard.service';
 
 // Home 
 import { HomeComponent } from '../home/home.component';
-import { NavigatorComponent } from '../home/components/navigator/navigator.component';
 
 import { AboutComponent } from '../about/about.component';
 
@@ -23,7 +22,7 @@ const routes: Routes = [{
 },
 {
   path: 'card',
-  component: NavigatorComponent,
+  component: HomeComponent,
   data: { title: 'Card List' }
 },
 {
